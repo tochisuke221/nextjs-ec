@@ -1,7 +1,7 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react' // StoryBook7から非推奨
+
 import type { Meta, StoryObj } from '@storybook/react';
-
 import Button from './index';
-
 
 const meta: Meta<typeof Button> = {
     title: 'Attoms/Button',
