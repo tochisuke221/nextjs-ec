@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Button from './index';
 
 const meta: Meta<typeof Button> = {
-    title: 'Attoms/Button',
+    title: 'Atoms/Button',
     argTypes: {
         variant: {
           options: ['primary', 'secondary'],
@@ -59,13 +59,14 @@ const meta: Meta<typeof Button> = {
   
 export default meta
 
-export const Primary: StoryObj = (args) => <Button {...args} />;
+// あとでany直す
+export const Primary: StoryObj = (args: any) => <Button {...args} />;
 Primary.args = { variant: 'primary', children: 'Primary Button' }
 
 // Secondaryボタン
-export const Secondary: StoryObj = (args) => <Button {...args} />;
+export const Secondary: StoryObj = (args: any) => <Button {...args} />;
 Secondary.args = { variant: 'secondary', children: 'Secondary Button' }
 
 // Disabledボタン
-export const Disabled: StoryObj = (args) => <Button {...args} />;
+export const Disabled: StoryObj = (args: any) => <Button {...args} />;
 Disabled.args = { disabled: true, children: 'Disabled Button' }
