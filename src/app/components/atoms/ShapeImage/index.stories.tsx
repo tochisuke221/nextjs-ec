@@ -1,8 +1,7 @@
-import { Meta, StoryObj } from "@storybook/react";
-import ShapeImage from "./index";
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import ShapeImage from './index'
 
-const meta: Meta<typeof ShapeImage> = {
-  component: ShapeImage,
+export default {
   title: 'Atoms/ShapeImage',
   argTypes: {
     shape: {
@@ -39,12 +38,14 @@ const meta: Meta<typeof ShapeImage> = {
       },
     },
   },
-}
+} as ComponentMeta<typeof ShapeImage>
 
-export default meta
+const Template: ComponentStory<typeof ShapeImage> = (args) => (
+  <ShapeImage {...args} />
+)
 
-const Circle: StoryObj = (args: any) => <ShapeImage {...args} />
-Circle.args = { src: '/images/sample/1.jpg', shape: 'circle' }
+export const Circle = Template.bind({})
+Circle.args = { src: '/images/sample/1.jpg', width: "400", height: "400", shape: 'circle' }
 
-const Square: StoryObj = (args: any) => <ShapeImage {...args} />
-Square.args = { src: '/images/sample/1.jpg', shape: 'square' }
+export const Square = Template.bind({})
+Square.args = { src: '/images/sample/1.jpg', width: "400", height: "400", shape: 'square' }
